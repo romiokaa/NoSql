@@ -28,24 +28,24 @@ results = collection.find({"balance": {"$gt": min_balance}})
 for result in results:
     print(result)
 
-pipeline = [
-    {"$group": {"_id": "$address.city", "total_balance": {"$sum": "$balance"}}},
-    {"$sort": {"total_balance": -1}}
-]
+# pipeline = [
+#     {"$group": {"_id": "$address.city", "total_balance": {"$sum": "$balance"}}},
+#     {"$sort": {"total_balance": -1}}
+# ]
 
-results = collection.aggregate(pipeline)
+# results = collection.aggregate(pipeline)
 
-for result in results:
-    print(f"{result['_id']}: {result['total_balance']}")
+# for result in results:
+#     print(f"{result['_id']}: {result['total_balance']}")
 
-index_name = collection.create_index("email", unique=True)
+# index_name = collection.create_index("email", unique=True)
 
-pipeline = [
-    {"$match": {"age": {"$gt": 25}}},
-    {"$group": {"_id": "$age", "count": {"$sum": 1}}}
-]
+# pipeline = [
+#     {"$match": {"age": {"$gt": 25}}},
+#     {"$group": {"_id": "$age", "count": {"$sum": 1}}}
+# ]
 
-results = collection.aggregate(pipeline)
+# results = collection.aggregate(pipeline)
 
-for result in results:
-    print(result)
+# for result in results:
+#     print(result)
