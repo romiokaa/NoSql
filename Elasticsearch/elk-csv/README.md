@@ -156,5 +156,3 @@ docker-compose down && docker-compose up -d
 - Si Kibana ne se connecte pas immédiatement, attendez quelques secondes puis rafraîchissez la page.
 - Si vous rencontrez des problèmes, consultez les logs de Logstash pour identifier d'éventuelles erreurs de parsing.
 ```
-
-Tu n'as qu'à copier tout ça et le coller dans un fichier `README.md`. Il contient toutes les instructions nécessaires pour configurer, lancer et gérer le projet ELK avec Docker.
