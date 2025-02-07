@@ -1,4 +1,3 @@
-Voici la reformulation du README que tu m'as demandé :
 # Stack ELK avec Docker
 
 Ce dépôt permet de configurer une stack ELK (Elasticsearch, Logstash et Kibana) en utilisant Docker. Il est conçu pour collecter, traiter et visualiser les journaux générés par un serveur web.
