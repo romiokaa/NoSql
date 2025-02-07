@@ -1,4 +1,3 @@
-```markdown
 # Projet Elasticsearch, Logstash & Kibana avec Docker
 
 Ce projet permet de configurer un environnement Elasticsearch, Logstash et Kibana (ELK) en utilisant Docker et Docker Compose. Elasticsearch sert de moteur de recherche et d'analyse, Logstash est utilisé pour l'ingestion des données, et Kibana fournit une interface de visualisation des données.
