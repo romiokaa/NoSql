@@ -1,7 +1,8 @@
 version: "3"
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.5.0
+    platform: linux/x86_64
+    image: elasticsearch:7.6.2
     container_name: elasticsearch
     hostname: elasticsearch
     restart: always
@@ -14,10 +15,10 @@ services:
       - dockerelk
     volumes:
       - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-    platform: linux/amd64
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:8.5.0
+    platform: linux/x86_64
+    image: logstash:7.6.2
     container_name: logstash
     hostname: logstash
     ports:
@@ -34,10 +35,13 @@ services:
       - ./logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
       - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
       - ./data/data.csv:/usr/share/logstash/external-data/data.csv
-    platform: linux/amd64
+      # - ./data/data-json.log:/usr/share/logstash/external-data/data-json.log
+      # - ./web_server_logs/logstash-apache.conf:/usr/share/logstash/pipeline/logstash-apache.conf
+      # - ./data/apache_logs.txt:/apache_logs.txt
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:8.5.0
+    platform: linux/x86_64
+    image: kibana:7.6.2
     container_name: kibana
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
@@ -47,7 +51,6 @@ services:
       - dockerelk
     depends_on:
       - elasticsearch
-    platform: linux/amd64
 
 networks:
   dockerelk:
